@@ -1,34 +1,88 @@
-
-
-function render(){
-    fetch('../js/questions.json')
-    .then((res)=>res.json())
-    .then((data)=>{
-        console.log(data)
-        ques = data.questions
-        for(let i = 0 ;i<ques.length;i++){
-            switch(ques[i].type){
-                case 'text':{
-                    document.getElementById('mainDiv').innerHTML+=`
-                    <div class = 'queDiv' id = 'que-${i+1}'>
-                        <p>Question # ${i+1}</p>
+function render() {
+  fetch("../js/questions.json")
+    .then((res) => res.json())
+    .then((data) => {
+      ques = data.questions;
+      for (let i = 0; i < ques.length; i++) {
+        switch (ques[i].type) {
+          case "text": {
+            document.getElementById("mainDiv").innerHTML += `
+                    <div class = 'queDiv' id = 'que-${i + 1}'>
+                        <p>Question # ${i + 1}</p>
                         <p class = 'ques'>${ques[i].question}</p>    
                         <input class = 'ans' type = 'text'/>
                     </div>
-                    `
-                }
-                case "radio":{
-                    document.getElementById('mainDiv').innerHTML+=`
-                    <div class = 'queDiv' id = 'que-${i+1}'>
-                        <p>Question # ${i+1}</p>`
-                    ques[i].options.map((option)=>{
-                        document.getElementById(`que-${i+1}`).innerHTML+=`
-                        
-                        <p><input type = radio name = '${option.text}'><span>${option.text}</span></input></p>
-                        `
-                    })
-                }
-            }
+                    `;
+            break;
+          }
+          case "radio": {
+            document.getElementById("mainDiv").innerHTML += `
+                        <div class = 'queDiv' id = 'que-${i + 1}'>
+                            <p>Question # ${i + 1}</p>
+                            <p>${ques[i].question}</p>
+                            `;
+
+            ques[i].options.map((option) => {
+              document.getElementById(`que-${i + 1}`).innerHTML += `
+                            
+                            <p>
+                                <input type = "radio" name = 'que-${
+                                  i + 1
+                                }' value = '${option.text}' id = 'que-${
+                i + 1
+              }-${option.text.slice(0, 15)}' />
+                                <label for ='que-${i + 1}-${option.text.slice(
+                0,
+                15
+              )}' >${option.text}</lable>
+                            </p>
+                            `;
+              document.getElementById("mainDiv").innerHTML += "</div>";
+            });
+            break;
+          }
+          case "list": {
+            document.getElementById("mainDiv").innerHTML += `
+                        <div class = 'queDiv' id = 'que-${i + 1}'>
+                            <p>Question # ${i + 1}</p>
+                            <p>${ques[i].question}</p>
+                            <select id = 'que-${i + 1}-select' multiple>
+                        `;
+            ques[i].options.map((option)=>{
+                document.getElementById(`que-${i + 1}-select`).innerHTML+=`
+                    <option>${option.text}</option>
+                `
+                document.getElementById('mainDiv').innerHTML+='</select>'
+            })
+        break 
+          }
+          case 'checkbox':{
+            document.getElementById("mainDiv").innerHTML += `
+                        <div class = 'queDiv' id = 'que-${i + 1}'>
+                            <p>Question # ${i + 1}</p>
+                            <p>${ques[i].question}</p>
+                            `;
+
+            ques[i].options.map((option) => {
+              document.getElementById(`que-${i + 1}`).innerHTML += `
+                            
+                            <p>
+                                <input type = "checkbox" name = 'que-${
+                                  i + 1
+                                }' value = '${option.text}' id = 'que-${
+                i + 1
+              }-${option.text.slice(0, 15)}' />
+                                <label for ='que-${i + 1}-${option.text.slice(
+                0,
+                15
+              )}' >${option.text}</lable>
+                            </p>
+                            `;
+              document.getElementById("mainDiv").innerHTML += "</div>";
+            });
+            break;
+          }
         }
-    })
+      }
+    });
 }
