@@ -1,0 +1,93 @@
+{
+  "questions": [
+    {
+      "question": "What does HTML stand for?",
+      "type": "radio",
+      "options": [
+        { "text": "HyperText Markup Language", "isCorrect": true },
+        { "text": "Hyperlinks and Text Markup Language", "isCorrect": false },
+        { "text": "Home Tool Markup Language", "isCorrect": false }
+      ]
+    },
+    {
+      "question": "Which of the following are JavaScript frameworks? (Select all that apply)",
+      "type": "checkbox",
+      "options": [
+        { "text": "React", "isCorrect": true },
+        { "text": "Angular", "isCorrect": true },
+        { "text": "Django", "isCorrect": false },
+        { "text": "Vue.js", "isCorrect": true }
+      ]
+    },
+    {
+      "question": "What is the output of `console.log(typeof null)` in JavaScript?",
+      "type": "text",
+      "correctAnswer": "object"
+    },
+    {
+      "question": "Which data structure uses LIFO (Last In, First Out)?",
+      "type": "list",
+      "options": [
+        { "text": "Queue", "isCorrect": false },
+        { "text": "Stack", "isCorrect": true },
+        { "text": "Array", "isCorrect": false },
+        { "text": "Linked List", "isCorrect": false }
+      ]
+    },
+    {
+      "question": "What is the time complexity of binary search in a sorted array?",
+      "type": "radio",
+      "options": [
+        { "text": "O(1)", "isCorrect": false },
+        { "text": "O(log n)", "isCorrect": true },
+        { "text": "O(n)", "isCorrect": false },
+        { "text": "O(n log n)", "isCorrect": false }
+      ]
+    },
+    {
+      "question": "Which of the following are valid Python data types? (Select all that apply)",
+      "type": "checkbox",
+      "options": [
+        { "text": "int", "isCorrect": true },
+        { "text": "float", "isCorrect": true },
+        { "text": "char", "isCorrect": false },
+        { "text": "string", "isCorrect": true }
+      ]
+    },
+    {
+      "question": "What does CSS stand for?",
+      "type": "text",
+      "correctAnswer": "Cascading Style Sheets"
+    },
+    {
+      "question": "Which protocol is used for secure communication over a computer network?",
+      "type": "list",
+      "options": [
+        { "text": "HTTP", "isCorrect": false },
+        { "text": "FTP", "isCorrect": false },
+        { "text": "HTTPS", "isCorrect": true },
+        { "text": "SMTP", "isCorrect": false }
+      ]
+    },
+    {
+      "question": "What is the main purpose of a database index?",
+      "type": "radio",
+      "options": [
+        { "text": "To store data permanently", "isCorrect": false },
+        { "text": "To speed up data retrieval", "isCorrect": true },
+        { "text": "To encrypt data", "isCorrect": false },
+        { "text": "To compress data", "isCorrect": false }
+      ]
+    },
+    {
+      "question": "Which of the following are NoSQL databases? (Select all that apply)",
+      "type": "checkbox",
+      "options": [
+        { "text": "MongoDB", "isCorrect": true },
+        { "text": "MySQL", "isCorrect": false },
+        { "text": "Cassandra", "isCorrect": true },
+        { "text": "PostgreSQL", "isCorrect": false }
+      ]
+    }
+  ]
+}
