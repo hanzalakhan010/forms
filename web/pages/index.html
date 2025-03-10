@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = 'stylesheet' href="../css/styles.css">
-    <script src = '../js/script.js'></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/script2.js" defer></script>
     <title>Forms App</title>
-</head>
-<body>
-    <h2>Computer Science quiz</h2>
-    <div id = 'mainDiv'></div>
-</body>
-<script>render()</script>
+  </head>
+  <body>
+    <h2>QUIZ APP</h2>
+    <select id="quizSelect" onchange="loadQuiz()">
+      <option value="" disabled selected>Select Subject</option>
+      <option value="Computer-Science">Computer-Science</option>
+      <option value="Mathematics">Mathematics</option>
+      <option value="Physics">Physics</option>
+      <option value="Geography">Geography</option>
+      <option value="Biology">Biology</option>
+      <option value="History">History</option>
+    </select>
+    <div id="mainDiv"></div>
+  </body>
 </html>
