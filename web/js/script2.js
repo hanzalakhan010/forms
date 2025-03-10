@@ -4,7 +4,7 @@ function loadQuiz() {
   fetch(`${host}/${selected}`)
     .then((res) => res.json())
     .then((data) => {
-        document.getElementById('mainDiv').innerHTML = ''
+      document.getElementById("mainDiv").innerHTML = "";
       ques = data;
       for (let i = 0; i < ques.length; i++) {
         switch (ques[i].type) {
@@ -87,5 +87,7 @@ function loadQuiz() {
           }
         }
       }
+      document.getElementById('mainDiv').innerHTML+=`
+      <button id = 'submitBtn' onclick = 'submit()'>Submit</button>`
     });
 }
